@@ -20,6 +20,17 @@ shasum -a 256 -c checksums.txt --ignore-missing
 chmod +x clidex-darwin-arm64 && sudo mv clidex-darwin-arm64 /usr/local/bin/clidex
 ```
 
+## 卸载
+
+```bash
+curl -fsSL https://clidex.dev/install.sh | sh -s -- --uninstall
+```
+
+Windows PowerShell 用 `$env:CLIDEX_UNINSTALL=1; irm https://clidex.dev/install.ps1 | iex`。
+会删除可执行文件、安装时加进 shell 配置的 PATH 行，以及运行时数据 `~/.config/clidex`
+（配对 Token、设备标识、更新检查记录等）。加 `--keep-data` 或设 `CLIDEX_KEEP_DATA=1` 保留数据。
+卸载前请先退出正在运行的 clidex。
+
 ## 开始
 
 ```bash
